@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -17,6 +17,7 @@
             android:id="@+id/editEmail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:autofillHints="username"
             android:ems="10"
             android:hint="name"
             android:inputType="textEmailAddress"
@@ -24,14 +25,14 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:layout_editor_absoluteX="56dp"
-            tools:layout_editor_absoluteY="73dp"
-            android:autofillHints="username" />
+            tools:layout_editor_absoluteY="73dp" />
 
         <EditText
             android:id="@+id/editPassword"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
+            android:autofillHints="password"
             android:ems="10"
             android:hint="password"
             android:inputType="textPassword"
@@ -39,20 +40,78 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/editEmail"
             tools:layout_editor_absoluteX="52dp"
-            tools:layout_editor_absoluteY="153dp"
-            android:autofillHints="password" />
+            tools:layout_editor_absoluteY="153dp" />
 
         <Button
             android:id="@+id/signin_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
+            android:enabled="true"
             android:text="Sign in"
+            android:visibility="visible"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/editPassword" />
 
+        <Button
+            android:id="@+id/signout_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:enabled="false"
+            android:text="Sign out"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/editPassword" />
+
+        <EditText
+            android:id="@+id/reg_mail"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:hint="mail"
+            android:inputType="textEmailAddress"
+            app:layout_constraintBottom_toTopOf="@id/reg_pass"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <EditText
+            android:id="@+id/reg_id"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:hint="id"
+            android:inputType="text"
+            app:layout_constraintBottom_toTopOf="@id/reg_pass"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <EditText
+            android:id="@+id/reg_pass"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:hint="password"
+            android:inputType="textPassword"
+            app:layout_constraintBottom_toTopOf="@id/register_button"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <EditText
+            android:id="@+id/reg_pass_confirm"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:hint="password confirm"
+            android:inputType="textPassword"
+            app:layout_constraintBottom_toTopOf="@id/register_button"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <Button
+            android:id="@+id/register_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="REGISTER"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
